@@ -1,0 +1,14 @@
+{
+  "name": "stark-md",
+  "version": "1.0.0",
+  "description": "Bot WhatsApp STARK MD",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@whiskeysockets/baileys": "^6.7.5",
+    "express": "^4.18.2",
+    "pino": "^8.17.2"
+  }
+}
