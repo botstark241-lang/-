@@ -5,7 +5,30 @@
 <p align="center">
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=25&duration=2000&pause=1000&color=FF0000;0000FF&center=true&vCenter=true&width=600&lines=Bienvenue+chez+%F0%9D%90%93%F0%9D%90%AE%F0%9D%90%AE%F0%9D%90%98%20%20%F0%9D%90%92%F0%9D%90%AD么%F0%9D%90%AB%F0%9D%90%A4" />
 </p>
+<p align="center">
+  <a href="https://render.com/deploy?repo=https://github.com/botstark/stark-md">
+    <img src="https://render.com/images/deploy-to-render-button.svg" alt="Deploy to Render"/>
+  </a>
+</p>
 
+## 📦 Déployer sur Render
+
+1. **Clique sur le bouton** ci-dessus
+2. **Connecte ton GitHub**
+3. **Remplis les Variables d'environnement**
+4. **Clique `Deploy`**
+
+### **Variables d'environnement requises**
+Copie/colle ça dans Render → `Environment`
+
+| Variable | Description | Exemple |
+| --- | --- | --- |
+| `SESSION_ID` | Code de session WhatsApp | `STARK~xxxxx` |
+| `OWNER_NUMBER` | Ton numéro WhatsApp | `24106000000` |
+| `PREFIX` | Préfixe des commandes | `.` |
+| `PORT` | Port du serveur | `3000` |
+
+> ⚠️ Change `https://github.com/botstark/stark-md` par le vrai lien de ton repo si c'est différent
 <p align="center">
   <img src="https://readme-typing-svg.demolab.com?font=Orbitron&size=35&duration=1500&pause=0&color=FF0000&center=true&vCenter=true&width=500&height=70&lines=Bot+%F0%9D%90%92%F0%9D%90%AD么%F0%9D%90%AB%F0%9D%90%A4+%F0%9D%99%BC%F0%9D%99%BD" />
 </p># Bot St么rk MD 🤖
