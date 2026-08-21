@@ -1,13 +1,13 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,24&height=250&section=header&text=Bot%20%F0%9D%90%92%F0%9D%90%AD么%F0%9D%90%AB%F0%9D%90%A4%20%F0%9D%99%BC%F0%9D%99%BD&fontSize=42&fontColor=fff&animation=twinkling&fontAlignY=35"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,20&height=280&section=header&text=Dev%20%F0%9D%90%93%F0%9D%90%AE%F0%9D%90%AE%F0%9D%90%98%20%20%F0%9D%90%92%F0%9D%90%AD么%F0%9D%90%AB%F0%9D%90%A4&fontSize=45&fontColor=ffffff&animation=twinkling&fontAlignY=40"/>
 </p>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Orbitron&size=30&duration=3000&pause=500&color=F00000&center=true&vCenter=true&width=600&lines=TONY+STARK+TECHNOLOGY;Powered+by+Arc+Reactor" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=25&duration=2000&pause=1000&color=FF0000;0000FF&center=true&vCenter=true&width=600&lines=Bienvenue+chez+%F0%9D%90%93%F0%9D%90%AE%F0%9D%90%AE%F0%9D%90%98%20%20%F0%9D%90%92%F0%9D%90%AD么%F0%9D%90%AB%F0%9D%90%A4" />
 </p>
 
 <p align="center">
-  <img src="https://github.com/ABSphreak/ABSphreak/raw/master/gifs/Hi.gif" width="250"/>
+  <img src="https://readme-typing-svg.demolab.com?font=Orbitron&size=35&duration=1500&pause=0&color=FF0000&center=true&vCenter=true&width=500&height=70&lines=Bot+%F0%9D%90%92%F0%9D%90%AD么%F0%9D%90%AB%F0%9D%90%A4+%F0%9D%99%BC%F0%9D%99%BD" />
 </p># Bot St么rk MD 🤖
 [[Deploy to Render] (https://render.com/images/deploy-to-render.svg)](https://render.com/deploy?repo=https://github.com/botstark241-lang/-)
 
