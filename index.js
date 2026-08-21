@@ -2,7 +2,7 @@ const { default: makeWASocket, DisconnectReason, useMultiFileAuthState, download
 const express = require('express');
 const pino = require('pino');
 const fs = require('fs');
-const { commandes } = require('./commandes.js') // <-- AJOUTÉ
+const { commandes } = require('./commandes.js') // Connecte commandes.js
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -15,6 +15,9 @@ app.listen(PORT, () => {
   console.log(`Serveur lancé sur le port ${PORT}`);
 });
 
+// Système BAN global
+global.banned = []
+
 async function startBot() {
   const { state, saveCreds } = await useMultiFileAuthState('session');
   const sock = makeWASocket({
@@ -25,7 +28,7 @@ async function startBot() {
 
   sock.ev.on('creds.update', saveCreds);
 
-  // ========== GESTION DES MESSAGES ==========
+  // Écouter tous les messages
   sock.ev.on('messages.upsert', async ({ messages }) => {
     const msg = messages[0]
     if (!msg.message) return
@@ -38,14 +41,12 @@ async function startBot() {
     const isGroup = from.endsWith('@g.us')
     const groupMetadata = isGroup? await sock.groupMetadata(from) : ''
 
-    // Bloquer les users ban
-    global.banned = global.banned || []
+    // SYSTÈME BAN : si le numéro est ban il bloque direct
     if (global.banned.includes(sender)) return
 
-    // Lancer toutes les commandes
+    // Envoyer au fichier commandes.js
     await commandes(sock, msg, body, from, isGroup, groupMetadata, pushname, sender)
   })
-  // ==========================================
 
   sock.ev.on('connection.update', (update) => {
     const { connection, lastDisconnect } = update;
