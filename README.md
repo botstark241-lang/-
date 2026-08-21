@@ -1,4 +1,14 @@
-# Bot St么rk MD 🤖
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=35&duration=3000&pause=1000&color=FF0000&center=true&vCenter=true&width=800&lines=Bot+%F0%9D%90%92%F0%9D%90%AD么%F0%9D%90%AB%F0%9D%90%A4+%F0%9D%99%BC%F0%9D%99%BD" />
+</p>
+
+<p align="center">
+  <img src="https://media.giphy.com/media/3o7TKSjRrfIPjeiVyM/giphy.gif" width="200" alt="Iron Man Heart"/>
+</p>
+
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:FF0000,50:8B0000,100:0000FF&height=40&section=footer&text=&fontSize=0"/>
+</p># Bot St么rk MD 🤖
 [[Deploy to Render](https://render.com/images/deploy-to-render.svg)](https://render.com/deploy?repo=https://github.com/botstark241-lang/-)
 
 Bot WhatsApp Multi-Device basé sur Baileys. Mode Pairing Code.
