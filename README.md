@@ -1,5 +1,7 @@
 # Bot St么rk MD 🤖
+[[Deploy to Render](https://render.com/images/deploy-to-render.svg)](https://render.com/deploy?repo=https://github.com/botstark241-lang/-)
 
+Bot WhatsApp Multi-Device basé sur Baileys. Mode Pairing Code.
 Bot WhatsApp Multi-Device basé sur Baileys. Mode Pairing Code.
 
 ## Fonctionnalités
