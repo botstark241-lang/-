@@ -1,6 +1,4 @@
-<p align="center">
-  <img src="https://raw.githubusercontent.com/botstark/STARK-MD/main/readme-banner.png" width="100%"/>
-</p>
+
 
 <p align="center">
   <a href="https://render.com/deploy?repo=https://github.com/botstark/stark-md">
