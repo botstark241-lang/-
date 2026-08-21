@@ -1,6 +1,7 @@
+const fs = require('fs')
 const { default: makeWASocket, DisconnectReason, useMultiFileAuthState, downloadMediaMessage } = require('@whiskeysockets/baileys');
 const express = require('express');
-const pino = require('pino');
+
 const fs = require('fs');
 const { commandes } = require('./commandes.js') // Connecte commandes.js
 
@@ -27,7 +28,16 @@ async function startBot() {
   });
 
   sock.ev.on('creds.update', saveCreds);
-
+  // CHANGER PHOTO DE PROFIL DU BOT AVEC stark.jpg
+sock.ev.on('creds.update', async () => {
+    try {
+        const pp = fs.readFileSync('./stark.jpg') 
+        await sock.updateProfilePicture(sock.user.id, pp)
+        console.log('✅ Photo de profil 𝐒𝐭么𝐫𝐤 𝙼𝙳 mise à jour')
+    } catch (e) {
+        console.log('Erreur PP:', e)
+    }
+})
   // Écouter tous les messages
   sock.ev.on('messages.upsert', async ({ messages }) => {
     const msg = messages[0]
