@@ -19,7 +19,17 @@
 4. **Clique `Deploy`**
 
 ### **Variables d'environnement requises**
-Copie/colle ça dans Render → `Environment`
+Clique sur le bouton "Copier" en haut à droite du bloc 👇
+
+```env
+PREFIXE=.
+NOM_OWNER=
+NUMERO_OWNER=241
+MODE=PRIVATE
+SESSION_ID=
+STICKER_PACK_NAME=Dev 𝐓𝚯᳆𝐘
+STICKER_AUTHOR_NAME=
+NOM_BOT=Bot 𝐒𝐭么𝐫𝐤 𝙼𝙳🤖
 
 | Variable | Description | Exemple |
 | --- | --- | --- |
@@ -31,8 +41,7 @@ Copie/colle ça dans Render → `Environment`
 > ⚠️ Change `https://github.com/botstark/stark-md` par le vrai lien de ton repo si c'est différent
 <p align="center">
   <img src="https://readme-typing-svg.demolab.com?font=Orbitron&size=35&duration=1500&pause=0&color=FF0000&center=true&vCenter=true&width=500&height=70&lines=Bot+%F0%9D%90%92%F0%9D%90%AD么%F0%9D%90%AB%F0%9D%90%A4+%F0%9D%99%BC%F0%9D%99%BD" />
-</p># Bot St么rk MD 🤖
-[[Deploy to Render] (https://render.com/images/deploy-to-render.svg)](https://render.com/deploy?repo=https://github.com/botstark241-lang/-)
+</p>
 
 Bot WhatsApp Multi-Device basé sur Baileys. Mode Pairing Code.
 Bot WhatsApp Multi-Device basé sur Baileys. Mode Pairing Code.
