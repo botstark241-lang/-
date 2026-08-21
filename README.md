@@ -1,15 +1,15 @@
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=35&duration=3000&pause=1000&color=FF0000&center=true&vCenter=true&width=800&lines=Bot+%F0%9D%90%92%F0%9D%90%AD么%F0%9D%90%AB%F0%9D%90%A4+%F0%9D%99%BC%F0%9D%99%BD" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,24&height=250&section=header&text=Bot%20%F0%9D%90%92%F0%9D%90%AD么%F0%9D%90%AB%F0%9D%90%A4%20%F0%9D%99%BC%F0%9D%99%BD&fontSize=42&fontColor=fff&animation=twinkling&fontAlignY=35"/>
 </p>
 
 <p align="center">
-  <img src="https://media.giphy.com/media/3o7TKSjRrfIPjeiVyM/giphy.gif" width="200" alt="Iron Man Heart"/>
+  <img src="https://readme-typing-svg.demolab.com?font=Orbitron&size=30&duration=3000&pause=500&color=F00000&center=true&vCenter=true&width=600&lines=TONY+STARK+TECHNOLOGY;Powered+by+Arc+Reactor" />
 </p>
 
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:FF0000,50:8B0000,100:0000FF&height=40&section=footer&text=&fontSize=0"/>
+  <img src="https://github.com/ABSphreak/ABSphreak/raw/master/gifs/Hi.gif" width="250"/>
 </p># Bot St么rk MD 🤖
-[[Deploy to Render](https://render.com/images/deploy-to-render.svg)](https://render.com/deploy?repo=https://github.com/botstark241-lang/-)
+[[Deploy to Render] (https://render.com/images/deploy-to-render.svg)](https://render.com/deploy?repo=https://github.com/botstark241-lang/-)
 
 Bot WhatsApp Multi-Device basé sur Baileys. Mode Pairing Code.
 Bot WhatsApp Multi-Device basé sur Baileys. Mode Pairing Code.
