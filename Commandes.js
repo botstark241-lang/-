@@ -153,5 +153,29 @@ ${prefix}setpp - Changer photo bot
         // Code pour renvoyer un vv en reply
     }
 }
+// COMMANDE .menu AVEC menu.jpg
+if (msg.body === '.menu') {
+    const pp = fs.readFileSync('./menu.jpg') 
+    await sock.sendMessage(m.from, {
+        image: pp,
+        caption: `👑 *MENU BOT 𝐒𝐭么𝐫𝐤 𝙼𝙳* 👑\n\n
+*🛡️ SECURITE*\n.antilink on / off\n
+*⚡ REACTION*\n.autoreact on / off\n
+*👤 INFO*\n.owner\n.menu\n
+_Dev 𝐓𝚯᳆𝐘 𝐒𝐭么𝐫𝐤_`,
+        footer: 'Dev 𝐓𝚯᳆𝐘 𝐒𝐭么𝐫𝐤',
+        headerType: 4
+    }, { quoted: m })
+    return
+}
 
+// COMMANDE .owner AVEC owner.jpg
+if (msg.body === '.owner') {
+    const pp = fs.readFileSync('./owner.jpg')
+    await sock.sendMessage(m.from, {
+        image: pp,
+        caption: `👑 *OWNER BOT 𝐒𝐭么𝐫𝐤 𝙼𝙳* 👑\n\nDev: 𝐓𝚯᳆𝐘 𝐒𝐭么𝐫𝐤\nContact: ton numero ici`
+    }, { quoted: m })
+    return
+            }
 module.exports = { commandes }
