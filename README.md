@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,20&height=280&section=header&text=Dev%20%F0%9D%90%93%F0%9D%90%AE%F0%9D%90%AE%F0%9D%90%98%20%20%F0%9D%90%92%F0%9D%90%AD么%F0%9D%90%AB%F0%9D%90%A4&fontSize=45&fontColor=ffffff&animation=twinkling&fontAlignY=40"/>
+  <img src="https://raw.githubusercontent.com/botstark/STARK-MD/main/stark.jpg" width="100%"/>
 </p>
 
 <p align="center">
