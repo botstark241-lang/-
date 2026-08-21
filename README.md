@@ -1,8 +1,7 @@
-
-
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=25&duration=2000&pause=1000&color=FF0000;0000FF&center=true&vCenter=true&width=600&lines=Bienvenue+chez+%F0%9D%90%93%F0%9D%90%AE%F0%9D%90%AE%F0%9D%90%98%20%20%F0%9D%90%92%F0%9D%90%AD么%F0%9D%90%AB%F0%9D%90%A4" />
+  <img src="https://raw.githubusercontent.com/botstark/STARK-MD/main/banner.png" width="100%"/>
 </p>
+
 <p align="center">
   <a href="https://render.com/deploy?repo=https://github.com/botstark/stark-md">
     <img src="https://render.com/images/deploy-to-render-button.svg" alt="Deploy to Render"/>
