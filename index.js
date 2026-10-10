@@ -2,12 +2,15 @@ const { default: makeWASocket, useMultiFileAuthState } = require('@whiskeysocket
 const pino = require('pino')
 const fs = require('fs')
 const express = require('express')
+const path = require('path')
 const { handleCommands } = require('./commande')
 
 const app = express()
 const PORT = process.env.PORT || 3000
 
-app.get('/', (req,res)=> res.sendFile(__dirname+'/pair.html'))
+app.get('/', (req,res)=> {
+  res.sendFile(path.join(__dirname,'pair.html'))
+})
 
 app.get('/pair', async (req,res)=>{
   let num = req.query.number?.replace(/[^0-9]/g,'')
@@ -17,15 +20,17 @@ app.get('/pair', async (req,res)=>{
     const sock = makeWASocket({ auth: state, logger: pino({level:'silent'}), printQRInTerminal:false, browser:["STARK-MD","Chrome","1.0"] })
     sock.ev.on('creds.update', saveCreds)
     if(!sock.authState.creds.registered){
+      await new Promise(r=> setTimeout(r,2000))
       let code = await sock.requestPairingCode(num)
-      res.json({code: code})
+      return res.json({code: code})
+    } else {
+      return res.json({error:'Déjà connecté'})
     }
   }catch(e){ res.json({error: e.message}) }
 })
 
-app.listen(PORT, ()=> console.log('Web en ligne sur port '+PORT))
+app.listen(PORT, ()=> console.log('Web OK '+PORT))
 
-// Lancement du bot principal
 async function start() {
   const { state, saveCreds } = await useMultiFileAuthState('session')
   const sock = makeWASocket({ auth: state, logger: pino({ level: 'silent' }), printQRInTerminal: true, browser: ["STARK-MD", "Chrome", "1.0"] })
@@ -39,7 +44,7 @@ async function start() {
     if(!body.startsWith(prefix)) return
     const args = body.slice(1).trim().split(/ +/)
     const command = args.shift().toLowerCase()
-    if(command==='menu'){
+    if(command==='menu' && fs.existsSync('./commande.json')){
       let data = JSON.parse(fs.readFileSync('./commande.json'))
       let txt = `*${data.botName} MENU*\n\n`
       data.commands.forEach(c=>{ txt+=`*${prefix}${c.cmd}* - ${c.desc}\n` })
