@@ -1,0 +1,20 @@
+{
+  "botName": "STARK MD",
+  "prefix": ".",
+  "owner": "Stark",
+  "commands": [
+    { "cmd": "vv", "desc": "Voir photo/video à usage unique" },
+    { "cmd": "vv2", "desc": "Voir et l'envoyer en privé" },
+    { "cmd": "antilink on/off", "desc": "Active anti-lien groupe" },
+    { "cmd": "kick @user", "desc": "Expulser un membre" },
+    { "cmd": "kickall2", "desc": "Expulser tous les non-admins" },
+    { "cmd": "bannumber", "desc": "Bloquer un numéro" },
+    { "cmd": "tagall", "desc": "Mentionner tout le groupe" },
+    { "cmd": "hidetag", "desc": "Tag caché" },
+    { "cmd": "toaudio", "desc": "Video -> audio (bientôt)" },
+    { "cmd": "s / tosticker", "desc": "Image en sticker (bientôt)" },
+    { "cmd": "quizz", "desc": "Jeu de questions" },
+    { "cmd": "ping", "desc": "Vitesse du bot" },
+    { "cmd": "menu", "desc": "Affiche ce menu" }
+  ]
+}
