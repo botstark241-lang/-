@@ -1,7 +1,7 @@
 const { default: makeWASocket, useMultiFileAuthState } = require('@whiskeysockets/baileys')
 const pino = require('pino')
 const fs = require('fs')
-const { handleCommands } = require('./commande')
+const { handleCommands } = require('commande')
 
 async function start() {
   const { state, saveCreds } = await useMultiFileAuthState('session')
