@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>STARK MD - Pair Code</title>
+<style>
+body{background:#0f0f0f;color:#fff;font-family:Arial;display:flex;justify-content:center;align-items:center;height:100vh;margin:0}
+.box{background:#1a1a1a;padding:25px;border-radius:15px;width:90%;max-width:350px;text-align:center;box-shadow:0 0 20px #00ff88}
+input{width:90%;padding:12px;border-radius:8px;border:none;margin:15px 0;font-size:16px}
+button{background:#00ff88;color:#000;padding:12px 20px;border:none;border-radius:8px;font-weight:bold;width:100%;font-size:16px}
+#code{margin-top:20px;font-size:32px;letter-spacing:5px;color:#00ff88;font-weight:bold}
+</style>
+</head>
+<body>
+<div class="box">
+<h2>STARK MD PAIR</h2>
+<p>Entre ton numéro avec indicatif<br>Ex: 24165000000</p>
+<input id="num" placeholder="241xxxxxxxx">
+<button onclick="getCode()">GET CODE</button>
+<div id="code"></div>
+</div>
+<script>
+async function getCode(){
+ let n=document.getElementById('num').value
+ if(!n) return alert('Entre numéro')
+ document.getElementById('code').innerText='Génération...'
+ let res=await fetch('/pair?number='+n)
+ let data=await res.json()
+ if(data.code) document.getElementById('code').innerText=data.code
+ else document.getElementById('code').innerText=data.error
+}
+</script>
+</body>
+</html>
