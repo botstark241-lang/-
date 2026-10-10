@@ -1,6 +1,7 @@
 const { default: makeWASocket, useMultiFileAuthState } = require('@whiskeysockets/baileys')
 const pino = require('pino')
 const fs = require('fs')
+const { handleCommands } = require('./commande')
 
 async function start() {
   const { state, saveCreds } = await useMultiFileAuthState('session')
@@ -19,19 +20,40 @@ async function start() {
     const from = msg.key.remoteJid
     const prefix = "."
 
-    if(body === prefix + 'menu' || body === prefix + 'help'){
-      if(fs.existsSync('./menu.jpg')){
-        await sock.sendMessage(from, {
-          image: fs.readFileSync('./menu.jpg'),
-          caption: `*STARK-MD V2*\n\nPrefix: ${prefix}\n\n• ${prefix}menu\n• ${prefix}ping\n\nBot by STARK`
-        }, { quoted: msg })
-      } else {
-        await sock.sendMessage(from, { text: `*STARK-MD V2*\n\n• ${prefix}menu\n• ${prefix}ping` }, { quoted: msg })
-      }
+    if(!body.startsWith(prefix)) return
+
+    const args = body.slice(1).trim().split(/ +/)
+    const command = args.shift().toLowerCase()
+
+    // 1. Tes anciennes commandes (menu + ping avec image)
+    if(command === 'menu' || command === 'help'){
+      try {
+        if(fs.existsSync('./commande.json')){
+          const data = JSON.parse(fs.readFileSync('./commande.json'))
+          let txt = `*${data.botName} MENU*\n\n`
+          data.commands.forEach(c => { txt += `*${prefix}${c.cmd}* - ${c.desc}\n` })
+
+          if(fs.existsSync('./menu.jpg')){
+            await sock.sendMessage(from, {
+              image: fs.readFileSync('./menu.jpg'),
+              caption: txt
+            }, { quoted: msg })
+          } else {
+            await sock.sendMessage(from, { text: txt }, { quoted: msg })
+          }
+        }
+      } catch(e){ console.log(e) }
+      return
     }
-    if(body === prefix + 'ping'){
+
+    if(command === 'ping'){
       await sock.sendMessage(from, { text: 'STARK-MD en ligne ✅' }, { quoted: msg })
+      return
     }
+
+    // 2. Toutes les nouvelles commandes (.vv.kick.kickall2.tagall etc)
+    await handleCommands(sock, msg, args, command, from)
   })
 }
+
 start()
