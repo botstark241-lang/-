@@ -1,0 +1,16 @@
+{
+  "name": "stark-md",
+  "version": "2.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@whiskeysockets/baileys": "^6.7.8",
+    "pino": "^8.17.2",
+    "qrcode-terminal": "^0.12.0"
+  },
+  "engines": {
+    "node": "20.x"
+  }
+}
