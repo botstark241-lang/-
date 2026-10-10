@@ -1,3 +1,4 @@
+require('dotenv').config()
 const { default: makeWASocket, useMultiFileAuthState } = require('@whiskeysockets/baileys')
 const pino = require('pino')
 const fs = require('fs')
@@ -8,16 +9,17 @@ const { handleCommands } = require('./commande')
 const app = express()
 const PORT = process.env.PORT || 3000
 
-app.get('/', (req,res)=> {
-  res.sendFile(path.join(__dirname,'pair.html'))
-})
+const BOT_NAME = process.env.BOT_NAME || "STARK-MD"
+const PREFIX = process.env.PREFIX || "."
+
+app.get('/', (req,res)=> res.sendFile(path.join(__dirname,'pair.html')))
 
 app.get('/pair', async (req,res)=>{
   let num = req.query.number?.replace(/[^0-9]/g,'')
   if(!num) return res.json({error:'Numéro invalide'})
   try{
     const { state, saveCreds } = await useMultiFileAuthState('./session-pair')
-    const sock = makeWASocket({ auth: state, logger: pino({level:'silent'}), printQRInTerminal:false, browser:["STARK-MD","Chrome","1.0"] })
+    const sock = makeWASocket({ auth: state, logger: pino({level:'silent'}), printQRInTerminal:false, browser:[BOT_NAME,"Chrome","1.0"] })
     sock.ev.on('creds.update', saveCreds)
     if(!sock.authState.creds.registered){
       await new Promise(r=> setTimeout(r,2000))
@@ -29,25 +31,27 @@ app.get('/pair', async (req,res)=>{
   }catch(e){ res.json({error: e.message}) }
 })
 
-app.listen(PORT, ()=> console.log('Web OK '+PORT))
+app.listen(PORT, ()=> console.log(`Web ${BOT_NAME} en ligne sur port ${PORT}`))
 
 async function start() {
   const { state, saveCreds } = await useMultiFileAuthState('session')
-  const sock = makeWASocket({ auth: state, logger: pino({ level: 'silent' }), printQRInTerminal: true, browser: ["STARK-MD", "Chrome", "1.0"] })
+  const sock = makeWASocket({ auth: state, logger: pino({ level: 'silent' }), printQRInTerminal: true, browser: [BOT_NAME, "Chrome", "1.0"] })
   sock.ev.on('creds.update', saveCreds)
   sock.ev.on('messages.upsert', async ({ messages }) => {
     const msg = messages[0]
     if(!msg.message || msg.key.fromMe) return
     const body = msg.message.conversation || msg.message.extendedTextMessage?.text || ""
     const from = msg.key.remoteJid
-    const prefix = "."
-    if(!body.startsWith(prefix)) return
-    const args = body.slice(1).trim().split(/ +/)
+    if(!body.startsWith(PREFIX)) return
+    const args = body.slice(PREFIX.length).trim().split(/ +/)
     const command = args.shift().toLowerCase()
+
+    console.log(`[${BOT_NAME}] ${command} de ${from}`)
+
     if(command==='menu' && fs.existsSync('./commande.json')){
       let data = JSON.parse(fs.readFileSync('./commande.json'))
-      let txt = `*${data.botName} MENU*\n\n`
-      data.commands.forEach(c=>{ txt+=`*${prefix}${c.cmd}* - ${c.desc}\n` })
+      let txt = `*${BOT_NAME} MENU*\n\n`
+      data.commands.forEach(c=>{ txt+=`*${PREFIX}${c.cmd}* - ${c.desc}\n` })
       await sock.sendMessage(from, {text: txt}, {quoted: msg})
       return
     }
